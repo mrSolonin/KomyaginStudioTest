@@ -1,0 +1,241 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: $font-main;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $c-text-main;
+}
+
+a {
+    color: $c-link-main;
+    transition: color .2s linear;
+
+    &:hover {
+        color: $c-link-hover;
+    }
+}
+
+.wrap {
+    background-color: #fff;
+    padding: 0 calc((100% - 300px) / 2);
+    transition: all 0.4s linear;
+
+    @media (min-width: $tablet-min) {
+        padding: 0 calc((100% - 720px) / 2);
+    }
+
+    @media (min-width: $desktop-min) {
+        padding: 0 calc((100% - 1200px) / 2);
+    }
+}
+
+.header {
+    display: flex;
+    height: 130px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: inset 0 -1px 0 $c-border;
+    transition: all 0.4s linear;
+
+    @media (max-width: $mobile-max) {
+        flex-wrap: wrap;
+        padding: 10px 5px;
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        @media (min-width: $tablet-min) {
+            margin-right: 40px;
+            width: 200px;
+        }
+
+        @media (min-width: $desktop-min) {
+            width: 300px;
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: 120px;
+            fill: $c-highlight;
+
+            @media (max-width: $mobile-max) {
+                width: 90px;
+                height: 60px;
+            }
+        }
+    }
+
+    &-nav {
+        align-self: center;
+        flex-grow: 1;
+
+        @media (max-width: $mobile-max) {
+            margin-top: 20px;
+            width: 50%;
+        }
+    }
+
+    &-menu {
+        display: flex;
+
+        &-item {
+            flex: 1 0 0;
+            text-align: center;
+
+            &:not(:first-child) {
+                box-shadow: inset 1px 0 0 $c-border;
+            }
+        }
+    }
+}
+.header.sticky {
+    position: fixed;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    transition: all 0.4s linear;
+        & svg {
+            width: 90px;
+            height: 60px;
+            transition: all 0.4s linear;
+        }
+    @media (max-width: $mobile-max) {
+        margin-top: 0;
+        padding: 5px;
+    }
+}
+
+.main {
+    display: flex;
+    min-height: calc(100vh - 30px - 18px);
+    &-sidebar {
+        @media (min-width: $tablet-min) {
+            flex-shrink: 0;
+            margin-right: 40px;
+            padding: 20px;
+            border-left: 1px solid $c-border;
+            border-right: 1px solid $c-border;
+        }
+
+        @media (max-width: $tablet-max) {
+            width: 200px;
+        }
+
+        @media (min-width: $desktop-min) {
+            width: 300px;
+        }
+
+    }
+
+    &-content {
+        order: 1;
+        flex-grow: 1;
+        padding: 20px 0;
+    }
+}
+
+.footer {
+    display: block;
+    position: absolute;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid $c-border;
+
+    &-copyright {
+        margin-left: 20px;
+    }
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+ul:not([class]) {
+    li {
+        margin-top: 1em;
+    }
+}
+
+code {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 0 .25em;
+    background-color: $c-bg-gray;
+    border-radius: .125em;
+}
+
+.image-item {
+    width: 100%;
+    height: 300px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #fff;
+    @media (max-width: $mobile-max) {
+        height: 150px;
+    }
+        & img {
+            width: 120%;
+            height: 120%;
+            margin: 0;
+        }
+}
+
+.drag-item {
+    left: -10%;
+    top: -10%;
+    bottom: -10%;
+    right: -10%;
+    align-items: center;
+}
+
+.toggle {
+    font-size: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #ee8800;
+    box-sizing: border-box;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: $mobile-max) {
+    .toggle {
+        display: block;
+    }
+
+    .tab-header-wrap  {
+        width: 100%;
+        display: none !important;
+            & li {
+                display: block;
+                text-align: center;
+            }
+    }
+    .activated {
+        display: block !important;
+    }
+}
+
+i {
+    font-family: fontawesome, serif !important;
+}
